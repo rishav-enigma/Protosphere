@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Write all protos and generates protobuffers to be used globally."
   spec.homepage      = "https://github.com/rishav-enigma/Protosphere"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = ">= 2.5.0"
 
   spec.metadata["rubygems_mfa_required"] = "true"
   # Specify which files should be added to the gem when it is released.
