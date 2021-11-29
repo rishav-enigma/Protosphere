@@ -2,7 +2,7 @@ AllCops:
   TargetRubyVersion: 2.5.0
   NewCops: enable
   Exclude:
-    - 'lib/rpc/protos/**/*.rb'
+    - 'lib/proto/**/*.rb'
     - 'vendor/bundle/**/*'
 
 Style/StringLiterals:
