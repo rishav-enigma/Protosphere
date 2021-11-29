@@ -1,5 +1,9 @@
 AllCops:
   TargetRubyVersion: 2.5.0
+  NewCops: enable
+  Exclude:
+    - 'lib/rpc/protos/**/*.rb'
+    - 'vendor/bundle/**/*'
 
 Style/StringLiterals:
   Enabled: true
@@ -11,7 +15,3 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
-
-
-AllCops:
-  NewCops: enable
