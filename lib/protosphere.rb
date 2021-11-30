@@ -2,7 +2,7 @@
 
 require_relative "protosphere/version"
 
-Dir.glob("proto/**/*_services_pb.rb").each { |proto| load proto }
+Dir["proto/**/*_services_pb.rb"].each {|file| require file }
 
 module Protosphere
   class Error < StandardError; end
