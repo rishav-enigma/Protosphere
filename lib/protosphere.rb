@@ -2,7 +2,7 @@
 
 require_relative "protosphere/version"
 
-require_all "proto"
+Dir.glob("proto/**/*_services_pb.rb").each { |proto| load proto }
 
 module Protosphere
   class Error < StandardError; end
