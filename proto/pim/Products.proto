@@ -16,7 +16,8 @@ service Products {
 message Product {
     uint32 id = 1;
     string name = 2;
-    uint32 stock = 3;
+    string description = 3;
+    string sku = 4;
 }
 
 message GetProductReq {
