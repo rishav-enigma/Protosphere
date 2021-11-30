@@ -2,7 +2,7 @@
 
 require_relative "protosphere/version"
 
-require "proto"
+require_all "proto"
 
 module Protosphere
   class Error < StandardError; end
