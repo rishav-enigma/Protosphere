@@ -2,9 +2,8 @@
 
 require_relative "protosphere/version"
 
-Dir["proto/**/*_services_pb.rb"].each {|file| require file }
-
 module Protosphere
+  Dir["proto/**/*_services_pb.rb"].each {|file| require file }
   class Error < StandardError; end
   # Your code goes here...
 end
