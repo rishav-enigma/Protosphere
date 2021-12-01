@@ -8,7 +8,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "pim.Product" do
       optional :id, :uint32, 1
       optional :name, :string, 2
-      optional :stock, :uint32, 3
+      optional :description, :string, 3
+      optional :sku, :string, 4
     end
     add_message "pim.GetProductReq" do
       optional :id, :uint32, 1
