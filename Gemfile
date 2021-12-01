@@ -16,3 +16,5 @@ gem "rubocop-rake"
 gem "byebug"
 
 gem "grpc-tools"
+
+gem "grpc"

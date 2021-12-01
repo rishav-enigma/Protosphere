@@ -9,6 +9,16 @@ GEM
     ast (2.4.2)
     byebug (11.1.3)
     diff-lcs (1.4.4)
+    google-protobuf (3.19.1-x86_64-darwin)
+    google-protobuf (3.19.1-x86_64-linux)
+    googleapis-common-protos-types (1.3.0)
+      google-protobuf (~> 3.14)
+    grpc (1.41.1-universal-darwin)
+      google-protobuf (~> 3.17)
+      googleapis-common-protos-types (~> 1.0)
+    grpc (1.41.1-x86_64-linux)
+      google-protobuf (~> 3.17)
+      googleapis-common-protos-types (~> 1.0)
     grpc-tools (1.41.1)
     parallel (1.21.0)
     parser (3.0.3.0)
@@ -52,6 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  grpc
   grpc-tools
   protosphere!
   rake (~> 13.0)
