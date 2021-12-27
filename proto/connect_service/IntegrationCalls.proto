@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package rpc.connect_service;
+
+service IntegrationCalls {
+    // Demonstrates a request response call
+    rpc GetIntegrationCall(GetIntegrationCallReq) returns (GetIntegrationCallResp) {}
+}
+
+message GetIntegrationCallReq {
+    string marketplace = 1;
+    string method = 2;
+    string config = 3;
+    string payload = 4;
+}
+
+message GetIntegrationCallResp {
+    string response = 1;
+    string resp_metadata = 2;
+}
