@@ -8,10 +8,9 @@ service IntegrationCalls {
 }
 
 message GetIntegrationCallReq {
-    string marketplace = 1;
-    string method = 2;
-    string config = 3;
-    string payload = 4;
+    string ss_code = 1;
+    string called_method = 2;
+    string payload = 3;
 }
 
 message GetIntegrationCallResp {

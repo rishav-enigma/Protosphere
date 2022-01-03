@@ -6,10 +6,9 @@ require 'google/protobuf'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("proto/connect_service/IntegrationCalls.proto", :syntax => :proto3) do
     add_message "rpc.connect_service.GetIntegrationCallReq" do
-      optional :marketplace, :string, 1
-      optional :method, :string, 2
-      optional :config, :string, 3
-      optional :payload, :string, 4
+      optional :ss_code, :string, 1
+      optional :called_method, :string, 2
+      optional :payload, :string, 3
     end
     add_message "rpc.connect_service.GetIntegrationCallResp" do
       optional :response, :string, 1
