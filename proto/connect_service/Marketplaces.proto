@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package rpc.connect_service;
+
+service Marketplaces {
+    // Demonstrates a request response call
+    rpc GetMarketplace(GetMarketplaceReq) returns (GetMarketplaceResp) {}
+    // Demonstrates a server streamer call
+    rpc GetMarketplaces(GetMarketplacesReq) returns (stream Marketplace) {}
+    // Demonstrates a client streaming call
+    rpc CreateMarketplaces(stream Marketplace) returns (CreateMarketplacesResp) {}
+    // Demonstrates a bidirectional streaming call
+    rpc CreateMarketplacesInStream(stream Marketplace) returns (stream Marketplace) {}
+}
+
+message Marketplace {
+    uint32 id = 1;
+    string name = 2;
+    string code = 3;
+    bool active = 4;
+}
+
+message GetMarketplaceReq {
+    uint32 id = 1;
+}
+
+message GetMarketplaceResp {
+    Marketplace marketplace = 1;
+}
+
+message GetMarketplacesReq {
+    string search = 1;
+    uint32 limit = 2;
+}
+
+message CreateMarketplacesResp {
+    repeated Marketplace marketplaces = 1;
+}

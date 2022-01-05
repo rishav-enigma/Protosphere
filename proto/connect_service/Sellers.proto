@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package rpc.connect_service;
+
+service Sellers {
+    // Demonstrates a request response call
+    rpc GetSeller(GetSellerReq) returns (GetSellerResp) {}
+    // Demonstrates a server streamer call
+    rpc GetSellers(GetSellersReq) returns (stream Seller) {}
+    // Demonstrates a client streaming call
+    rpc CreateSellers(stream Seller) returns (CreateSellersResp) {}
+    // Demonstrates a bidirectional streaming call
+    rpc CreateSellersInStream(stream Seller) returns (stream Seller) {}
+}
+
+message Seller {
+    uint32 id = 1;
+    string name = 2;
+    string code = 3;
+    bool active = 4;
+    string state = 5;
+    string seller_tag = 6;
+}
+
+message GetSellerReq {
+    uint32 id = 1;
+}
+
+message GetSellerResp {
+    Seller seller = 1;
+}
+
+message GetSellersReq {
+    string search = 1;
+    uint32 limit = 2;
+}
+
+message CreateSellersResp {
+    repeated Seller sellers = 1;
+}

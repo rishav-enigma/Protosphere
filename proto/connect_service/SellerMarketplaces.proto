@@ -1,0 +1,50 @@
+
+syntax = "proto3";
+
+package rpc.connect_service;
+
+service SellerMarketplaces {
+    // Demonstrates a request response call
+    rpc GetSellerMarketplace(GetSellerMarketplaceReq) returns (GetSellerMarketplaceResp) {}
+    // Demonstrates a server streamer call
+    rpc GetSellerMarketplaces(GetSellerMarketplacesReq) returns (stream SellerMarketplace) {}
+    // Demonstrates a client streaming call
+    rpc CreateSellerMarketplaces(stream SellerMarketplace) returns (CreateSellerMarketplacesResp) {}
+    // Demonstrates a bidirectional streaming call
+    rpc CreateSellerMarketplacesInStream(stream SellerMarketplace) returns (stream SellerMarketplace) {}
+}
+
+message SellerMarketplace {
+    uint32 id = 1;
+    string name = 2;
+    string ss_code = 3;
+    uint32 seller_id = 4;
+    uint32 marketplace_id = 5;
+    bool active = 6;
+    string state = 7;
+    bool store_split_order_enabled = 8;
+    string sync_status = 9;
+    string mp_timezone = 10;
+    string currency_code = 11;
+    string store_code = 12;
+    string order_routing_rule = 13;
+    string marketplace_seller_id = 14;
+    string last_error = 15;
+}
+
+message GetSellerMarketplaceReq {
+    uint32 id = 1;
+}
+
+message GetSellerMarketplaceResp {
+    SellerMarketplace seller_marketplace = 1;
+}
+
+message GetSellerMarketplacesReq {
+    string search = 1;
+    uint32 limit = 2;
+}
+
+message CreateSellerMarketplacesResp {
+    repeated SellerMarketplace seller_marketplaces = 1;
+}
