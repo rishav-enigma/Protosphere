@@ -13,6 +13,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "rpc.connect_service.GetMarketplaceReq" do
       optional :id, :uint32, 1
+      optional :search, :string, 2
     end
     add_message "rpc.connect_service.GetMarketplaceResp" do
       optional :marketplace, :message, 1, "rpc.connect_service.Marketplace"

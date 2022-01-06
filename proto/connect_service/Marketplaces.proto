@@ -22,6 +22,7 @@ message Marketplace {
 
 message GetMarketplaceReq {
     uint32 id = 1;
+    string search = 2;
 }
 
 message GetMarketplaceResp {
