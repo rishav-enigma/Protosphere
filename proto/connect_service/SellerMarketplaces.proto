@@ -1,7 +1,7 @@
 
 syntax = "proto3";
 
-package rpc.connect_service;
+package connect_service;
 
 service SellerMarketplaces {
     // Demonstrates a request response call
@@ -34,6 +34,7 @@ message SellerMarketplace {
 
 message GetSellerMarketplaceReq {
     uint32 id = 1;
+    string search = 2;
 }
 
 message GetSellerMarketplaceResp {

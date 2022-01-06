@@ -5,21 +5,19 @@ require 'google/protobuf'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("proto/connect_service/IntegrationCalls.proto", :syntax => :proto3) do
-    add_message "rpc.connect_service.GetIntegrationCallReq" do
+    add_message "connect_service.GetIntegrationCallReq" do
       optional :ss_code, :string, 1
       optional :called_method, :string, 2
       optional :payload, :string, 3
     end
-    add_message "rpc.connect_service.GetIntegrationCallResp" do
+    add_message "connect_service.GetIntegrationCallResp" do
       optional :response, :string, 1
       optional :resp_metadata, :string, 2
     end
   end
 end
 
-module Rpc
-  module ConnectService
-    GetIntegrationCallReq = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("rpc.connect_service.GetIntegrationCallReq").msgclass
-    GetIntegrationCallResp = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("rpc.connect_service.GetIntegrationCallResp").msgclass
-  end
+module ConnectService
+  GetIntegrationCallReq = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("connect_service.GetIntegrationCallReq").msgclass
+  GetIntegrationCallResp = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("connect_service.GetIntegrationCallResp").msgclass
 end

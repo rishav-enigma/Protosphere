@@ -5,7 +5,7 @@ require 'google/protobuf'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("proto/connect_service/Sellers.proto", :syntax => :proto3) do
-    add_message "rpc.connect_service.Seller" do
+    add_message "connect_service.Seller" do
       optional :id, :uint32, 1
       optional :name, :string, 2
       optional :code, :string, 3
@@ -13,28 +13,27 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :state, :string, 5
       optional :seller_tag, :string, 6
     end
-    add_message "rpc.connect_service.GetSellerReq" do
+    add_message "connect_service.GetSellerReq" do
       optional :id, :uint32, 1
+      optional :search, :string, 2
     end
-    add_message "rpc.connect_service.GetSellerResp" do
-      optional :seller, :message, 1, "rpc.connect_service.Seller"
+    add_message "connect_service.GetSellerResp" do
+      optional :seller, :message, 1, "connect_service.Seller"
     end
-    add_message "rpc.connect_service.GetSellersReq" do
+    add_message "connect_service.GetSellersReq" do
       optional :search, :string, 1
       optional :limit, :uint32, 2
     end
-    add_message "rpc.connect_service.CreateSellersResp" do
-      repeated :sellers, :message, 1, "rpc.connect_service.Seller"
+    add_message "connect_service.CreateSellersResp" do
+      repeated :sellers, :message, 1, "connect_service.Seller"
     end
   end
 end
 
-module Rpc
-  module ConnectService
-    Seller = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("rpc.connect_service.Seller").msgclass
-    GetSellerReq = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("rpc.connect_service.GetSellerReq").msgclass
-    GetSellerResp = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("rpc.connect_service.GetSellerResp").msgclass
-    GetSellersReq = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("rpc.connect_service.GetSellersReq").msgclass
-    CreateSellersResp = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("rpc.connect_service.CreateSellersResp").msgclass
-  end
+module ConnectService
+  Seller = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("connect_service.Seller").msgclass
+  GetSellerReq = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("connect_service.GetSellerReq").msgclass
+  GetSellerResp = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("connect_service.GetSellerResp").msgclass
+  GetSellersReq = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("connect_service.GetSellersReq").msgclass
+  CreateSellersResp = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("connect_service.CreateSellersResp").msgclass
 end

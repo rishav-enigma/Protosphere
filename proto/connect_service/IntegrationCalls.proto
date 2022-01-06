@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package rpc.connect_service;
+package connect_service;
 
 service IntegrationCalls {
     // Demonstrates a request response call
