@@ -19,7 +19,7 @@ module Pim
       # Demonstrates a server streamer call
       rpc :GetUsers, ::Pim::GetUserReq, stream(::Pim::User)
       # Demonstrates a client streaming call
-      rpc :CreateUsers, ::Pim::User, ::Pim::GetUserResp
+      rpc :CreateUser, ::Pim::User, ::Pim::GetUserResp
       # Demonstrates a bidirectional streaming call
       rpc :CreateUsersInStream, stream(::Pim::User), stream(::Pim::User)
     end

@@ -8,7 +8,7 @@ service Users {
     // Demonstrates a server streamer call
     rpc GetUsers(GetUserReq) returns (stream User) {}
     // Demonstrates a client streaming call
-    rpc CreateUsers(User) returns (GetUserResp) {}
+    rpc CreateUser(User) returns (GetUserResp) {}
     // Demonstrates a bidirectional streaming call
     rpc CreateUsersInStream(stream User) returns (stream User) {}
 }
