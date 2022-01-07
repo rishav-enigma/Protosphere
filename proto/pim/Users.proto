@@ -32,6 +32,11 @@ message GetUserResp {
     User user = 1;
 }
 
+message CreateUserResp {
+    User user = 1;
+    string error_message = 2;
+}
+
 message GetUsersReq {
     string search = 1;
     uint32 limit = 2;

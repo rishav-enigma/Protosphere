@@ -21,6 +21,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "pim.GetUserResp" do
       optional :user, :message, 1, "pim.User"
     end
+    add_message "pim.CreateUserResp" do
+      optional :user, :message, 1, "pim.User"
+      optional :error_message, :string, 2
+    end
     add_message "pim.GetUsersReq" do
       optional :search, :string, 1
       optional :limit, :uint32, 2
@@ -32,5 +36,6 @@ module Pim
   User = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("pim.User").msgclass
   GetUserReq = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("pim.GetUserReq").msgclass
   GetUserResp = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("pim.GetUserResp").msgclass
+  CreateUserResp = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("pim.CreateUserResp").msgclass
   GetUsersReq = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("pim.GetUsersReq").msgclass
 end
