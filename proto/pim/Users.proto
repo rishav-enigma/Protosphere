@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package pim;
+
+service Users {
+    // Demonstrates a request response call
+    rpc GetUser(GetUserReq) returns (GetUserResp) {}
+    // Demonstrates a server streamer call
+    rpc GetUsers(GetUserReq) returns (stream User) {}
+    // Demonstrates a client streaming call
+    rpc CreateUsers(User) returns (GetUserResp) {}
+    // Demonstrates a bidirectional streaming call
+    rpc CreateUsersInStream(stream User) returns (stream User) {}
+}
+
+message User {
+    uint32 id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string email = 4;
+    uint32 seller_id = 5;
+    uint32 oms_user_id = 6;
+    bool active = 7;
+    uint32 shard_id = 8;
+}
+
+message GetUserReq {
+    uint32 id = 1;
+}
+
+message GetUserResp {
+    User user = 1;
+}
+
+message GetUsersReq {
+    string search = 1;
+    uint32 limit = 2;
+}
+
+//message CreateUsersResp {
+  //  User user = 1;
+//}
