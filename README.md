@@ -22,7 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create your proto file in proto/ according to your project and then execute: 
+
+    $ rake
+That's it, you're done. Just check for errors, if any.
 
 ## Development
 
